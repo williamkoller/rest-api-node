@@ -21,8 +21,8 @@ export class CacheManager {
     await this.cacheManager.set(name, payload, disableTtl);
   }
 
-  async getCache(name: string): Promise<number> {
-    return await this.cacheManager.get<number>(name);
+  async getCache<T>(name: string): Promise<T[]> {
+    return await this.cacheManager.get<T>(name);
   }
 
   async resetCache(): Promise<void> {
